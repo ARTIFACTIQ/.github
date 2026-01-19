@@ -19,12 +19,19 @@ We build AI that **sees** what's valuable in visual content and **connects** it 
 
 ## Our Repositories
 
+### Core Engine
+| Repo | Description |
+|------|-------------|
+| [`core`](https://github.com/ARTIFACTIQ/core) | High-performance Rust engine with ONNX & CoreML backends |
+| [`releases`](https://github.com/ARTIFACTIQ/releases) | Pre-built binaries and website |
+
+**Latest: v1.0.0-alpha.13** — CoreML support for Apple Silicon with 39 custom classes, 3.4x faster!
+
 ### SDKs & Tools
 | Repo | Description |
 |------|-------------|
 | [`sdk-python`](https://github.com/ARTIFACTIQ/sdk-python) | Official Python SDK |
 | [`sdk-javascript`](https://github.com/ARTIFACTIQ/sdk-javascript) | Official JS/TS SDK |
-| [`cli`](https://github.com/ARTIFACTIQ/cli) | Command-line interface |
 | [`examples`](https://github.com/ARTIFACTIQ/examples) | Integration examples |
 
 ### Documentation
@@ -37,6 +44,19 @@ We build AI that **sees** what's valuable in visual content and **connects** it 
 
 ## Quick Start
 
+### CLI (Recommended)
+```bash
+# Install
+curl -fsSL https://artifactiq.ai/install.sh | sh
+
+# Analyze images (auto-downloads model on first use)
+artifactiq analyze --input photo.jpg
+
+# On Apple Silicon, use CoreML for 3.4x faster inference
+artifactiq analyze --input photo.jpg --coreml
+```
+
+### Python SDK
 ```python
 from artifactiq import Artifactiq
 
